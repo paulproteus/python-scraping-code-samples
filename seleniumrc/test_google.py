@@ -16,6 +16,7 @@ limitations under the License.
 
 from selenium import selenium
 import unittest
+import time
 
 class TestGoogle(unittest.TestCase):
     def setUp(self):
@@ -28,11 +29,21 @@ class TestGoogle(unittest.TestCase):
         sel.open("http://www.google.com/webhp")
         sel.type("q", "hello world")
         sel.click("btnG")
-        sel.wait_for_page_to_load(5000)
+        waited = 0
+        MAX_WAIT = 5
+        INTERVAL = 0.5
+        succeeded = False
+        while (waited < MAX_WAIT) and (not succeeded):
+            try:
+                self.assertEqual("hello world - Google Search", sel.get_title())
+                succeeded = True
+            except AssertionError:
+                waited = INTERVAL + waited
+                time.sleep(INTERVAL)
         self.assertEqual("hello world - Google Search", sel.get_title())
     
     def tearDown(self):
-        print 'self.selenium.stop()'
+        self.selenium.stop()
 
 if __name__ == "__main__":
     unittest.main()
