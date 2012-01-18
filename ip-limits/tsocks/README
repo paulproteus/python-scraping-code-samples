@@ -1,0 +1,8 @@
+First, create a conf file like:
+
+server = 127.0.0.1
+server_type = 5
+port = 1080
+
+export TSOCKS_CONF_FILE=/path/to/that.file
+tsocks python

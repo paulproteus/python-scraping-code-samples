@@ -1,0 +1,4 @@
+The code in this directory shows you a few ways
+to interact with JavaScript code from Python.
+
+Generally, I advise using Selenium RC instead.

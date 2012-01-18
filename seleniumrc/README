@@ -1,0 +1,18 @@
+To use Selenium RC from Python:
+
+* Download a Selenium RC zip file. To find one, go to http://seleniumhq.org/download/
+  and click on the "Download" link labeled "Selenium RC".
+  One such ZIP file is http://release.seleniumhq.org/selenium-remote-control/1.0-beta-2/selenium-remote-control-1.0-beta-2-dist.zip
+* Unzip it
+* Run it: e.g.
+  $ java -jar selenium-remote-control-1.0-beta-2/selenium-server-1.0-beta-2/selenium-server.jar 
+
+Now, with Selenium RC running, you can execute the Python sample code. For example:
+
+$ python test_google.py
+
+Now that you have that working, take a look at my (hackish) downloader
+for PDFs from USPTO Public Pair.
+
+Ta-da!
+
