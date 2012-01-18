@@ -7,7 +7,7 @@ GOOGLE_BASE='http://google.com/search?q='
 def search_for(s):
     request = urllib2.Request(GOOGLE_BASE + urllib.quote(s))
     request.add_header('User-Agent',
-        'Mozilla/4.0 (compatible; MSIE 5.0; Windows 98;)')
+        'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)')
     # More IE user-agents at http://www.useragentstring.com/pages/Internet%20Explorer/
     opener = urllib2.build_opener()
     response = opener.open(request).read()
