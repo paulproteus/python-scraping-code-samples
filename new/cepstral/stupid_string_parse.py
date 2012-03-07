@@ -4,4 +4,3 @@ def parse(s):
         if 'wav' in piece:
             return piece
 
-            
