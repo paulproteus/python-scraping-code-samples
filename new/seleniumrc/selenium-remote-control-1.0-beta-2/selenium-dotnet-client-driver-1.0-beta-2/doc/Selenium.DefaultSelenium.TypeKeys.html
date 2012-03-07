@@ -1,0 +1,28 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>DefaultSelenium.TypeKeys Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">An NDoc Documented Class Library</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">DefaultSelenium.TypeKeys Method </h1>
+      </div>
+    </div>
+    <div id="nstext">Simulates keystroke events on the specified element, as though you typed the value key-by-key. <p>This is a convenience method for calling keyDown, keyUp, keyPress for every character in the specified string; this is useful for dynamic UI widgets (like auto-completing combo boxes) that require explicit key events.</p><p>Unlike the simple "type" command, which forces the specified value into the page directly, this command may or may not have any visible effect, even in cases where typing keys would normally have a visible effect. For example, if you use "typeKeys" on a form element, you may or may not see the results of what you typed in the field.</p><p>In some cases, you may need to use the simple "type" command to set the value of the field and then the "typeKeys" command to send the keystroke events corresponding to what you just typed.</p>
+            <div class="syntax">public <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> TypeKeys(<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">string</a> <i>locator</i>,<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">string</a> <i>value</i><br />);</div><h4 class="dtH4">Parameters</h4><dl><dt><i>locator</i></dt><dd>an <a href="#locators">element locator</a></dd><dt><i>value</i></dt><dd>the value to type</dd></dl><h4 class="dtH4">Implements</h4><p><a href="Selenium.ISelenium.TypeKeys.html">ISelenium.TypeKeys</a></p><h4 class="dtH4">See Also</h4><p><a href="Selenium.DefaultSelenium.html">DefaultSelenium Class</a> | <a href="Selenium.html">Selenium Namespace</a></p></div>
+  </body>
+</html>

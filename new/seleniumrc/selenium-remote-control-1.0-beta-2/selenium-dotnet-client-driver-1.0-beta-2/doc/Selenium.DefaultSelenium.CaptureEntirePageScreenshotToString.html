@@ -1,0 +1,46 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>DefaultSelenium.CaptureEntirePageScreenshotToString Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">An NDoc Documented Class Library</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">DefaultSelenium.CaptureEntirePageScreenshotToString Method </h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>Downloads a screenshot of the browser current window canvas to a based 64 encoded PNG file. The <em>entire</em> windows canvas is captured, including parts rendered outside of the current view port. Currently this only works in Mozilla and when running in chrome mode. </p>
+      <div class="syntax">public <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">string</a> CaptureEntirePageScreenshotToString(<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">string</a> <i>kwargs</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>kwargs</i>
+        </dt>
+        <dd>A kwargs string that modifies the way the screenshot is captured. Example: "background=#CCFFDD". This may be useful to set for capturing screenshots of less-than-ideal layouts, for example where absolute positioning causes the calculation of the canvas dimension to fail and a black background is exposed (possibly obscuring black text).</dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p>The base 64 encoded string of the page screenshot (PNG file)</p>
+      <h4 class="dtH4">Implements</h4>
+      <p>
+        <a href="Selenium.ISelenium.CaptureEntirePageScreenshotToString.html">ISelenium.CaptureEntirePageScreenshotToString</a>
+      </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Selenium.DefaultSelenium.html">DefaultSelenium Class</a> | <a href="Selenium.html">Selenium Namespace</a></p>
+    </div>
+  </body>
+</html>

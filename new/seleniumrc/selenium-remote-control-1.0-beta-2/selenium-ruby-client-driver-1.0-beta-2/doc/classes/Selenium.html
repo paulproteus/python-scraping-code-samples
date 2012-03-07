@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Selenium</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Selenium</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/selenium/client/base_rb.html">
+                lib/selenium/client/base.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/client/driver_rb.html">
+                lib/selenium/client/driver.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/client/extensions_rb.html">
+                lib/selenium/client/extensions.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/client/generated_driver_rb.html">
+                lib/selenium/client/generated_driver.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/client/idiomatic_rb.html">
+                lib/selenium/client/idiomatic.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/client/protocol_rb.html">
+                lib/selenium/client/protocol.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/client/selenium_helper_rb.html">
+                lib/selenium/client/selenium_helper.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/command_error_rb.html">
+                lib/selenium/command_error.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/protocol_error_rb.html">
+                lib/selenium/protocol_error.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/rake/remote_control_start_task_rb.html">
+                lib/selenium/rake/remote_control_start_task.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/rake/remote_control_stop_task_rb.html">
+                lib/selenium/rake/remote_control_stop_task.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/remote_control/remote_control_rb.html">
+                lib/selenium/remote_control/remote_control.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/rspec/reporting/file_path_strategy_rb.html">
+                lib/selenium/rspec/reporting/file_path_strategy.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/rspec/reporting/html_report_rb.html">
+                lib/selenium/rspec/reporting/html_report.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/rspec/reporting/selenium_test_report_formatter_rb.html">
+                lib/selenium/rspec/reporting/selenium_test_report_formatter.rb
+                </a>
+        <br />
+                <a href="../files/lib/selenium/rspec/reporting/system_capture_rb.html">
+                lib/selenium/rspec/reporting/system_capture.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Defines a mixin module that you can use to write <a
+href="Selenium.html">Selenium</a> tests without typing
+&quot;@selenium.&quot; in front of every command. Every call to a missing
+method will be automatically sent to the @selenium object.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="Selenium/Client.html" class="link">Selenium::Client</a><br />
+Module <a href="Selenium/RSpec.html" class="link">Selenium::RSpec</a><br />
+Module <a href="Selenium/Rake.html" class="link">Selenium::Rake</a><br />
+Module <a href="Selenium/RemoteControl.html" class="link">Selenium::RemoteControl</a><br />
+Class <a href="Selenium/CommandError.html" class="link">Selenium::CommandError</a><br />
+Class <a href="Selenium/ProtocolError.html" class="link">Selenium::ProtocolError</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

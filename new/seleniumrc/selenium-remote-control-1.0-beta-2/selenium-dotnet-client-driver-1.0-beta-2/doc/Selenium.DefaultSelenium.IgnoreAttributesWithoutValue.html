@@ -1,0 +1,44 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>DefaultSelenium.IgnoreAttributesWithoutValue Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">An NDoc Documented Class Library</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">DefaultSelenium.IgnoreAttributesWithoutValue Method </h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>Specifies whether Selenium will ignore xpath attributes that have no value, i.e. are the empty string, when using the non-native xpath evaluation engine. You'd want to do this for performance reasons in IE. However, this could break certain xpaths, for example an xpath that looks for an attribute whose value is NOT the empty string. The hope is that such xpaths are relatively rare, but the user should have the option of using them. Note that this only influences xpath evaluation when using the ajaxslt engine (i.e. not "javascript-xpath"). </p>
+      <div class="syntax">public <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> IgnoreAttributesWithoutValue(<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">string</a> <i>ignore</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>ignore</i>
+        </dt>
+        <dd>boolean, true means we'll ignore attributes without value at the expense of xpath "correctness"; false means we'll sacrifice speed for correctness.</dd>
+      </dl>
+      <h4 class="dtH4">Implements</h4>
+      <p>
+        <a href="Selenium.ISelenium.IgnoreAttributesWithoutValue.html">ISelenium.IgnoreAttributesWithoutValue</a>
+      </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Selenium.DefaultSelenium.html">DefaultSelenium Class</a> | <a href="Selenium.html">Selenium Namespace</a></p>
+    </div>
+  </body>
+</html>

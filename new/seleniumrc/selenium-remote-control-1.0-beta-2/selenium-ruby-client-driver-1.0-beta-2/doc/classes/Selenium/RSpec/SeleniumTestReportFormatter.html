@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Selenium::RSpec::SeleniumTestReportFormatter</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Selenium::RSpec::SeleniumTestReportFormatter</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/selenium/rspec/reporting/selenium_test_report_formatter_rb.html">
+                lib/selenium/rspec/reporting/selenium_test_report_formatter.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Spec::Runner::Formatter::HtmlFormatter
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000039">capture_system_state</a>&nbsp;&nbsp;
+      <a href="#M000038">example_failed</a>&nbsp;&nbsp;
+      <a href="#M000036">example_passed</a>&nbsp;&nbsp;
+      <a href="#M000037">example_pending</a>&nbsp;&nbsp;
+      <a href="#M000035">extra_failure_content</a>&nbsp;&nbsp;
+      <a href="#M000042">file_path_strategy</a>&nbsp;&nbsp;
+      <a href="#M000040">global_scripts</a>&nbsp;&nbsp;
+      <a href="#M000041">global_styles</a>&nbsp;&nbsp;
+      <a href="#M000043">include_example_group_description</a>&nbsp;&nbsp;
+      <a href="#M000034">move_progress</a>&nbsp;&nbsp;
+      <a href="#M000033">start</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+          <a href="#M000039" class="method-signature">
+          <span class="method-name">capture_system_state</span><span class="method-args">(selenium_driver, example)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Should be called from config.after(:each) in spec helper
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000039-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000039-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 66</span>
+66:       <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">capture_system_state</span>(<span class="ruby-identifier">selenium_driver</span>, <span class="ruby-identifier">example</span>)
+67:         <span class="ruby-identifier">system_capture</span> = <span class="ruby-constant">Selenium</span><span class="ruby-operator">::</span><span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Reporting</span><span class="ruby-operator">::</span><span class="ruby-constant">SystemCapture</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">selenium_driver</span>, <span class="ruby-identifier">example</span>, <span class="ruby-identifier">file_path_strategy</span>)
+68:         <span class="ruby-identifier">system_capture</span>.<span class="ruby-identifier">capture_system_state</span>                      
+69:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+          <a href="#M000042" class="method-signature">
+          <span class="method-name">file_path_strategy</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000042-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000042-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 79</span>
+79:       <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">file_path_strategy</span>
+80:               <span class="ruby-comment cmt">### HACK ####</span>
+81:               <span class="ruby-comment cmt"># When running with DeepTest the class instance variable could not have been set</span>
+82:               <span class="ruby-comment cmt"># For now you must set the env variable before launching the tests. We need to revisit the way DeepTest</span>
+83:               <span class="ruby-comment cmt"># and RSpec reporting work for a proper fix.</span>
+84:               <span class="ruby-ivar">@@file_path_strategy</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Selenium</span><span class="ruby-operator">::</span><span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Reporting</span><span class="ruby-operator">::</span><span class="ruby-constant">FilePathStrategy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;SELENIUM_TEST_REPORT_FILE&quot;</span>])
+85:             <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+          <a href="#M000038" class="method-signature">
+          <span class="method-name">example_failed</span><span class="method-args">(example, counter, failure)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000038-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 49</span>
+49:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">example_failed</span>(<span class="ruby-identifier">example</span>, <span class="ruby-identifier">counter</span>, <span class="ruby-identifier">failure</span>)
+50:         <span class="ruby-identifier">include_example_group_description</span> <span class="ruby-identifier">example</span>
+51:         
+52:         <span class="ruby-identifier">old_output</span> = <span class="ruby-ivar">@output</span>
+53:         <span class="ruby-ivar">@output</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+54:         <span class="ruby-keyword kw">super</span>
+55:         
+56:         <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@output</span>.<span class="ruby-identifier">string</span>
+57:         <span class="ruby-identifier">report</span> = <span class="ruby-constant">Selenium</span><span class="ruby-operator">::</span><span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Reporting</span><span class="ruby-operator">::</span><span class="ruby-constant">HtmlReport</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@@file_path_strategy</span>)
+58:         <span class="ruby-identifier">report</span>.<span class="ruby-identifier">replace_placeholder_with_system_state_content</span>(<span class="ruby-identifier">result</span>, <span class="ruby-identifier">example</span>)
+59:         <span class="ruby-identifier">old_output</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">result</span>
+60:         <span class="ruby-identifier">old_output</span>.<span class="ruby-identifier">flush</span>
+61:       <span class="ruby-keyword kw">ensure</span>
+62:         <span class="ruby-ivar">@output</span> = <span class="ruby-identifier">old_output</span>
+63:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
+
+        <div class="method-heading">
+          <a href="#M000036" class="method-signature">
+          <span class="method-name">example_passed</span><span class="method-args">(example)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000036-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 39</span>
+39:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">example_passed</span>(<span class="ruby-identifier">example</span>)
+40:         <span class="ruby-identifier">include_example_group_description</span> <span class="ruby-identifier">example</span>
+41:         <span class="ruby-keyword kw">super</span>
+42:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+          <a href="#M000037" class="method-signature">
+          <span class="method-name">example_pending</span><span class="method-args">(example, message, pending_caller)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 44</span>
+44:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">example_pending</span>(<span class="ruby-identifier">example</span>, <span class="ruby-identifier">message</span>, <span class="ruby-identifier">pending_caller</span>)
+45:         <span class="ruby-identifier">include_example_group_description</span> <span class="ruby-identifier">example</span>
+46:         <span class="ruby-keyword kw">super</span>
+47:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
+
+        <div class="method-heading">
+          <a href="#M000035" class="method-signature">
+          <span class="method-name">extra_failure_content</span><span class="method-args">(failure)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000035-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 35</span>
+35:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extra_failure_content</span>(<span class="ruby-identifier">failure</span>)
+36:         <span class="ruby-constant">Selenium</span><span class="ruby-operator">::</span><span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Reporting</span><span class="ruby-operator">::</span><span class="ruby-constant">HtmlReport</span>.<span class="ruby-identifier">inject_placeholder</span>(<span class="ruby-keyword kw">super</span>)
+37:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <a href="#M000040" class="method-signature">
+          <span class="method-name">global_scripts</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000040-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000040-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 71</span>
+71:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">global_scripts</span>
+72:         <span class="ruby-constant">Selenium</span><span class="ruby-operator">::</span><span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Reporting</span><span class="ruby-operator">::</span><span class="ruby-constant">HtmlReport</span>.<span class="ruby-identifier">append_javascript</span>(<span class="ruby-keyword kw">super</span>)
+73:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <a href="#M000041" class="method-signature">
+          <span class="method-name">global_styles</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000041-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000041-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 75</span>
+75:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">global_styles</span>
+76:         <span class="ruby-constant">Selenium</span><span class="ruby-operator">::</span><span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Reporting</span><span class="ruby-operator">::</span><span class="ruby-constant">HtmlReport</span>.<span class="ruby-identifier">append_css</span>(<span class="ruby-keyword kw">super</span>)
+77:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000034" class="method-detail">
+        <a name="M000034"></a>
+
+        <div class="method-heading">
+          <a href="#M000034" class="method-signature">
+          <span class="method-name">move_progress</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000034-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000034-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 31</span>
+31:       <span class="ruby-keyword kw">def</span>  <span class="ruby-identifier">move_progress</span><span class="ruby-identifier">move_progress</span>
+32:         <span class="ruby-comment cmt"># we don't have current_example_number, and we don't really care about the progress bar</span>
+33:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000033" class="method-detail">
+        <a name="M000033"></a>
+
+        <div class="method-heading">
+          <a href="#M000033" class="method-signature">
+          <span class="method-name">start</span><span class="method-args">(example_count)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000033-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 21</span>
+21:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start</span>(<span class="ruby-identifier">example_count</span>)
+22:         <span class="ruby-keyword kw">super</span>
+23:         <span class="ruby-comment cmt"># ensure there's at least 1 example group header (normally 0 with deep_test)</span>
+24:         <span class="ruby-comment cmt"># prevents js and html validity errors</span>
+25:         <span class="ruby-identifier">example_group</span> = <span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>
+26:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">example_group</span>.<span class="ruby-identifier">description</span>; <span class="ruby-value str">&quot;&quot;</span>; <span class="ruby-keyword kw">end</span>
+27:         <span class="ruby-identifier">add_example_group</span>(<span class="ruby-identifier">example_group</span>)
+28:         <span class="ruby-ivar">@@file_path_strategy</span> = <span class="ruby-constant">Selenium</span><span class="ruby-operator">::</span><span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Reporting</span><span class="ruby-operator">::</span><span class="ruby-constant">FilePathStrategy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@where</span>)
+29:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000043" class="method-detail">
+        <a name="M000043"></a>
+
+        <div class="method-heading">
+          <a href="#M000043" class="method-signature">
+          <span class="method-name">include_example_group_description</span><span class="method-args">(example)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000043-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000043-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 89</span>
+89:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">include_example_group_description</span>(<span class="ruby-identifier">example</span>)
+90:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">example</span>.<span class="ruby-identifier">description</span>
+91:           <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">description</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; :: &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-keyword kw">super</span>
+92:         <span class="ruby-keyword kw">end</span>
+93:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

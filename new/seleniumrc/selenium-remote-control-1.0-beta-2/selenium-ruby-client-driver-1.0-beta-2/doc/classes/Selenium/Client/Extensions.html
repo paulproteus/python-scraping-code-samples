@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Selenium::Client::Extensions</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Selenium::Client::Extensions</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/selenium/client/extensions_rb.html">
+                lib/selenium/client/extensions.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Convenience methods not explicitely part of the protocol
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000237">wait_for_ajax</a>&nbsp;&nbsp;
+      <a href="#M000238">wait_for_effects</a>&nbsp;&nbsp;
+      <a href="#M000239">wait_for_element</a>&nbsp;&nbsp;
+      <a href="#M000243">wait_for_field_value</a>&nbsp;&nbsp;
+      <a href="#M000240">wait_for_no_element</a>&nbsp;&nbsp;
+      <a href="#M000242">wait_for_no_text</a>&nbsp;&nbsp;
+      <a href="#M000241">wait_for_text</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000237" class="method-detail">
+        <a name="M000237"></a>
+
+        <div class="method-heading">
+          <a href="#M000237" class="method-signature">
+          <span class="method-name">wait_for_ajax</span><span class="method-args">(timeout_in_seconds=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+These for all Ajax request to finish (Only works if you are using
+prototype, the wait in happenning browser side)
+</p>
+<p>
+See <a
+href="http://davidvollbracht.com/2008/6/4/30-days-of-tech-day-3-waitforajax">davidvollbracht.com/2008/6/4/30-days-of-tech-day-3-waitforajax</a>
+for more background.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000237-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000237-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/client/extensions.rb, line 11</span>
+11:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wait_for_ajax</span>(<span class="ruby-identifier">timeout_in_seconds</span>=<span class="ruby-keyword kw">nil</span>)
+12:               <span class="ruby-identifier">wait_for_condition</span> <span class="ruby-value str">&quot;selenium.browserbot.getCurrentWindow().Ajax.activeRequestCount == 0&quot;</span>, <span class="ruby-identifier">timeout_in_seconds</span>
+13:             <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000238" class="method-detail">
+        <a name="M000238"></a>
+
+        <div class="method-heading">
+          <a href="#M000238" class="method-signature">
+          <span class="method-name">wait_for_effects</span><span class="method-args">(timeout_in_seconds=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wait for all Prototype effects to be processed (the wait in happenning
+browser side).
+</p>
+<p>
+Credits to <a
+href="http://github.com/brynary/webrat/tree/master">github.com/brynary/webrat/tree/master</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000238-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000238-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/client/extensions.rb, line 18</span>
+18:                         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wait_for_effects</span>(<span class="ruby-identifier">timeout_in_seconds</span>=<span class="ruby-keyword kw">nil</span>)
+19:                           <span class="ruby-identifier">wait_for_condition</span> <span class="ruby-value str">&quot;window.Effect.Queue.size() == 0&quot;</span>, <span class="ruby-identifier">timeout_in_seconds</span>
+20:                         <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000239" class="method-detail">
+        <a name="M000239"></a>
+
+        <div class="method-heading">
+          <a href="#M000239" class="method-signature">
+          <span class="method-name">wait_for_element</span><span class="method-args">(locator, timeout_in_seconds=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wait for an element to be present (the wait in happenning browser side).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000239-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000239-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/client/extensions.rb, line 23</span>
+23:                   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wait_for_element</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">timeout_in_seconds</span>=<span class="ruby-keyword kw">nil</span>)
+24:                     <span class="ruby-identifier">script</span> = <span class="ruby-value str">&quot;var element;\ntry {\nelement = selenium.browserbot.findElement('\#{locator}');\n} catch(e) {\nelement = null;\n}\nelement != null\n&quot;</span>
+25: 
+26:                     <span class="ruby-identifier">wait_for_condition</span> <span class="ruby-identifier">script</span>, <span class="ruby-identifier">timeout_in_seconds</span>
+27:                   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000243" class="method-detail">
+        <a name="M000243"></a>
+
+        <div class="method-heading">
+          <a href="#M000243" class="method-signature">
+          <span class="method-name">wait_for_field_value</span><span class="method-args">(locator, expected_value, timeout_in_seconds=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wait for a field to get a specific value (the wait in happenning browser
+side).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000243-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000243-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/client/extensions.rb, line 81</span>
+81:                   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wait_for_field_value</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">expected_value</span>, <span class="ruby-identifier">timeout_in_seconds</span>=<span class="ruby-keyword kw">nil</span>)
+82:                     <span class="ruby-identifier">script</span> = <span class="ruby-node">&quot;var element;
+83:                               try {
+84:                                 element = selenium.browserbot.findElement('#{locator}');
+85:                               } catch(e) {
+86:                                 element = null;
+87:                               }
+88:                               element != null &amp;&amp; element.value == '#{expected_value}'&quot;</span>
+89: 
+90:                     <span class="ruby-identifier">wait_for_condition</span> <span class="ruby-identifier">script</span>, <span class="ruby-identifier">timeout_in_seconds</span>
+91:                   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000240" class="method-detail">
+        <a name="M000240"></a>
+
+        <div class="method-heading">
+          <a href="#M000240" class="method-signature">
+          <span class="method-name">wait_for_no_element</span><span class="method-args">(locator, timeout_in_seconds=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wait for an element to NOT be present (the wait in happenning browser
+side).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000240-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000240-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/client/extensions.rb, line 39</span>
+39:                   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wait_for_no_element</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">timeout_in_seconds</span>=<span class="ruby-keyword kw">nil</span>)
+40:                     <span class="ruby-identifier">script</span> = <span class="ruby-value str">&quot;var element;\ntry {\nelement = selenium.browserbot.findElement('\#{locator}');\n} catch(e) {\nelement = null;\n}\nelement == null\n&quot;</span>
+41: 
+42:                     <span class="ruby-identifier">wait_for_condition</span> <span class="ruby-identifier">script</span>, <span class="ruby-identifier">timeout_in_seconds</span>
+43:                   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000242" class="method-detail">
+        <a name="M000242"></a>
+
+        <div class="method-heading">
+          <a href="#M000242" class="method-signature">
+          <span class="method-name">wait_for_no_text</span><span class="method-args">(locator, original_text, timeout_in_seconds=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wait for some text to NOT be present (the wait in happenning browser side).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000242-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000242-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/client/extensions.rb, line 68</span>
+68:                   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wait_for_no_text</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">original_text</span>, <span class="ruby-identifier">timeout_in_seconds</span>=<span class="ruby-keyword kw">nil</span>)
+69:                     <span class="ruby-identifier">script</span> = <span class="ruby-node">&quot;var element;
+70:                               try {
+71:                                 element = selenium.browserbot.findElement('#{locator}');
+72:                               } catch(e) {
+73:                                 element = null;
+74:                               }
+75:                               element != null &amp;&amp; element.innerHTML != '#{original_text}'&quot;</span>
+76: 
+77:                     <span class="ruby-identifier">wait_for_condition</span> <span class="ruby-identifier">script</span>, <span class="ruby-identifier">time</span>
+78:                   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000241" class="method-detail">
+        <a name="M000241"></a>
+
+        <div class="method-heading">
+          <a href="#M000241" class="method-signature">
+          <span class="method-name">wait_for_text</span><span class="method-args">(locator, text, timeout_in_seconds=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wait for some text to be present (the wait in happenning browser side).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000241-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000241-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/selenium/client/extensions.rb, line 55</span>
+55:                   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wait_for_text</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">text</span>, <span class="ruby-identifier">timeout_in_seconds</span>=<span class="ruby-keyword kw">nil</span>)
+56:                     <span class="ruby-identifier">script</span> = <span class="ruby-node">&quot;var element;
+57:                               try {
+58:                                 element = selenium.browserbot.findElement('#{locator}');
+59:                               } catch(e) {
+60:                                 element = null;
+61:                               }
+62:                               element != null &amp;&amp; element.innerHTML == '#{text}'&quot;</span>
+63: 
+64:                     <span class="ruby-identifier">wait_for_condition</span> <span class="ruby-identifier">script</span>, <span class="ruby-identifier">timeout_in_seconds</span>
+65:                   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

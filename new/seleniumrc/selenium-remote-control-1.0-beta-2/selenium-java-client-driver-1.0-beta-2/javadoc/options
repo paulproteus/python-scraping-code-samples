@@ -1,0 +1,23 @@
+-classpath 'C:/hudson/workspace/selenium-rc-trunk-win-headless/trunk/clients/java/target/classes;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/codehaus/groovy/maven/runtime/gmaven-runtime-api/1.0-rc-3/gmaven-runtime-api-1.0-rc-3.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/codehaus/groovy/maven/feature/gmaven-feature-support/1.0-rc-3/gmaven-feature-support-1.0-rc-3.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/bouncycastle/bcprov-jdk15/135/bcprov-jdk15-135.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/jline/jline/0.9.94/jline-0.9.94.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/seleniumhq/selenium/core/selenium-core/1.0-beta-2/selenium-core-1.0-beta-2.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/codehaus/groovy/maven/runtime/gmaven-runtime-1.5/1.0-rc-3/gmaven-runtime-1.5-1.0-rc-3.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/apache/ant/ant/1.7.1/ant-1.7.1.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/codehaus/groovy/maven/runtime/gmaven-runtime-default/1.0-rc-3/gmaven-runtime-default-1.0-rc-3.jar;C:/hudson/workspace/selenium-rc-trunk-win-headless/trunk/selenium-server/target/selenium-server-1.0-beta-2-standalone.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/jetty/org.mortbay.jetty/5.1.10/org.mortbay.jetty-5.1.10.jar;C:/hudson/workspace/selenium-rc-trunk-win-headless/trunk/server-coreless/target/selenium-server-coreless-1.0-beta-2.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/slf4j/slf4j-api/1.5.0/slf4j-api-1.5.0.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/junit/junit/3.8.1/junit-3.8.1.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/com/thoughtworks/qdox/qdox/1.6.3/qdox-1.6.3.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/codehaus/groovy/maven/feature/gmaven-feature-api/1.0-rc-3/gmaven-feature-api-1.0-rc-3.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/ant/ant/1.6.5/ant-1.6.5.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/codehaus/groovy/maven/gmaven-common/1.0-rc-3/gmaven-common-1.0-rc-3.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/codehaus/plexus/plexus-utils/1.5.5/plexus-utils-1.5.5.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/codehaus/groovy/groovy-all-minimal/1.5.6/groovy-all-minimal-1.5.6.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/org/codehaus/groovy/maven/runtime/gmaven-runtime-support/1.0-rc-3/gmaven-runtime-support-1.0-rc-3.jar;c:/hudson/workspace/selenium-rc-trunk-win-headless/tmp/commons-codec/commons-codec/1.3/commons-codec-1.3.jar'
+ -encoding
+'ISO-8859-1'
+-protected
+-sourcepath
+'C:/hudson/workspace/selenium-rc-trunk-win-headless/trunk/clients/java/src/main/java;C:/hudson/workspace/selenium-rc-trunk-win-headless/trunk/clients/java/target/generated-sources/main/java;C:/hudson/workspace/selenium-rc-trunk-win-headless/trunk/clients/java/target/generated-sources/groovy-stubs/main;C:/hudson/workspace/selenium-rc-trunk-win-headless/trunk/clients/java/src/main/groovy'
+-author
+-bottom
+'Copyright &#169; 2009. All Rights Reserved.'
+-charset
+'ISO-8859-1'
+-d
+'C:/hudson/workspace/selenium-rc-trunk-win-headless/trunk/clients/java/target/apidocs'
+-doctitle
+'Selenium RC Java Client Driver 1.0-beta-2 API'
+-linkoffline
+'http://selenium.seleniumhq.org/projects/remote-control/selenium-server-coreless/apidocs' 'C:/hudson/workspace/selenium-rc-trunk-win-headless/trunk/server-coreless/target/apidocs'
+-linkoffline
+'http://selenium.seleniumhq.org/projects/remote-control/selenium-xlator/apidocs' 'C:/hudson/workspace/selenium-rc-trunk-win-headless/trunk/xlator/target/apidocs'
+-use
+-version
+-windowtitle
+'Selenium RC Java Client Driver 1.0-beta-2 API'

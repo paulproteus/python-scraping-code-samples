@@ -1,0 +1,45 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ISelenium.AddLocationStrategy Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">An NDoc Documented Class Library</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ISelenium.AddLocationStrategy Method </h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>Defines a new function for Selenium to locate elements on the page. For example, if you define the strategy "foo", and someone runs click("foo=blah"), we'll run your function, passing you the string "blah", and click on the element that your function returns, or throw an "Element not found" error if your function returns null. We'll pass three arguments to your function: <ul><li>locator: the string the user passed in</li><li>inWindow: the currently selected window</li><li>inDocument: the currently selected document</li></ul> The function must return null if the element can't be found. </p>
+      <div class="syntax">
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> AddLocationStrategy(<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">string</a> <i>strategyName</i>,<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">string</a> <i>functionDefinition</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>strategyName</i>
+        </dt>
+        <dd>the name of the strategy to define; this should use only letters [a-zA-Z] with no spaces or other punctuation.</dd>
+        <dt>
+          <i>functionDefinition</i>
+        </dt>
+        <dd>a string defining the body of a function in JavaScript. For example: <pre class="code">return inDocument.getElementById(locator);</pre></dd>
+      </dl>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="Selenium.ISelenium.html">ISelenium Interface</a> | <a href="Selenium.html">Selenium Namespace</a></p>
+    </div>
+  </body>
+</html>

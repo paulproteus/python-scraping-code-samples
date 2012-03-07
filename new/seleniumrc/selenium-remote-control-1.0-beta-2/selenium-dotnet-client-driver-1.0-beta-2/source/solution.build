@@ -1,0 +1,65 @@
+<?xml version="1.0"  encoding="utf-8" ?>
+<project name="selenium-client-dotnet" default="compile" basedir=".">
+    <target name="compile-sln">
+        <solution configuration="debug"
+                  solutionfile="src/Selenium.sln" />
+    </target>
+    <target name="compile"
+            depends="init,compile-core, compile-unit-tests, compile-integration-tests"/>
+
+    <target name="compile-core">
+        <csc target="library" output="target/ThoughtWorks.Selenium.Core.dll" debug="true" doc="target/Core.xml">
+            <sources>
+                <include name="src/Core/*.cs"/>
+            </sources>
+            <references>
+                <include name="System.dll"/>
+                <include name="System.Data.dll"/>
+                <include name="System.Xml.dll"/>
+                <include name="System.Web.dll"/>
+                <include name="target/*.dll"/>
+            </references>
+        </csc>
+    </target>
+
+
+    <target name="compile-unit-tests">
+        <csc target="library" output="target/ThoughtWorks.Selenium.UnitTests.dll" debug="true">
+            <sources>
+                <include name="src/UnitTests/*.cs"/>
+            </sources>
+            <references>
+                <include name="System.dll"/>
+                <include name="System.Data.dll"/>
+                <include name="System.Xml.dll"/>
+                <include name="System.Web.dll"/>
+                <include name="lib/nunit.*.dll"/>
+                <include name="lib/nmock.dll"/>
+                <include name="target/*.dll"/>
+            </references>
+        </csc>
+    </target>
+
+    <target name="compile-integration-tests">
+        <csc target="library" output="target/ThoughtWorks.Selenium.IntegrationTests.dll" debug="true">
+            <sources>
+                <include name="src/IntegrationTests/*.cs"/>
+            </sources>
+            <references>
+                <include name="System.dll"/>
+                <include name="System.Data.dll"/>
+                <include name="System.Xml.dll"/>
+                <include name="System.Web.dll"/>
+                <include name="lib/nunit.*.dll"/>
+                <include name="target/*.dll"/>
+            </references>
+        </csc>
+    </target>
+    <target name="init">
+        <copy todir="target">
+            <fileset basedir="lib">
+                <include name="*.dll"/>
+            </fileset>
+        </copy>
+    </target>
+</project>

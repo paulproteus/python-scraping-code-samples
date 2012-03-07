@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.markdown</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.markdown</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.markdown
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Mon Jan 12 15:17:38 -0600 2009</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Welcome to the official Ruby driver for [<a
+href="../classes/Selenium.html">Selenium</a> Remote Control](<a
+href="http://selenium-rc.openqa.org">selenium-rc.openqa.org</a>)
+</p>
+<p>
+Mission
+</p>
+<h6>=</h6>
+<pre>
+ Provide a simple yet idiomatic Ruby API to write Selenium tests in Ruby. Gives you a straightforward way to
+ write your Selenium tests in Ruby.
+</pre>
+<p>
+Install It
+</p>
+<h6>====</h6>
+<pre>
+ The easiest way to install the install selenium-client using RubyGems:
+
+    sudo gem install selenium-client
+</pre>
+<p>
+Features
+</p>
+<h6>==</h6>
+<ul>
+<li>Backward compatible with the old-fashioned, XSL generated <a
+href="../classes/Selenium.html">Selenium</a> Ruby API.
+
+</li>
+</ul>
+<pre>
+ See [the generated driver](http://selenium-client.rubyforge.org/classes/Selenium/Client/GeneratedDriver.html) to get an extensive reference.
+</pre>
+<ul>
+<li>Idiomatic interface to the <a href="../classes/Selenium.html">Selenium</a>
+API. See [the Idiomatic module](<a
+href="http://selenium-client.rubyforge.org/classes/Selenium/Client/Idiomatic.html">selenium-client.rubyforge.org/classes/Selenium/Client/Idiomatic.html</a>)
+for more details.
+
+</li>
+<li>Convenience methods for AJAX.
+
+</li>
+</ul>
+<pre>
+ See the [Extensions](http://selenium-client.rubyforge.org/classes/Selenium/Client/Extensions.html)
+  for more details.
+</pre>
+<ul>
+<li>Flexible wait semantics inline with the trigerring action. e.g.
+
+<ul>
+<li>`click &#8216;the_button_id&#8217;, :wait_for =&gt; :page`
+
+</li>
+<li>`click &#8216;the_button_id&#8217;, :wait_for =&gt; :ajax`
+
+</li>
+<li>`click &#8216;the_button_id&#8217;, :wait_for =&gt; :element, :element
+=&gt; &#8216;new_element_id&#8217;`
+
+</li>
+<li>`click &#8216;the_button_id&#8217;, :wait_for =&gt; :no_element, :element
+=&gt; &#8216;disappearing_element_id&#8217;`
+
+</li>
+<li>`click &#8216;the_button_id&#8217;, :wait_for =&gt; :text, :text =&gt;
+&#8216;New Text&#8217;`
+
+</li>
+<li>`click &#8216;the_button_id&#8217;, :wait_for =&gt; :no_text, :text =&gt;
+&#8216;Disappearing Text&#8217;`
+
+</li>
+<li>`click &#8216;the_button_id&#8217;, :wait_for =&gt; :effects`
+
+</li>
+<li>`click &#8216;the_button_id&#8217;, :wait_for =&gt; :condition, :javascript
+=&gt; &quot;some arbitrary javascript expression&quot;`
+
+</li>
+</ul>
+<p>
+Check out the `click`, `go_back` and `wait_for` methods of the [Idiomatic
+Module](<a
+href="http://selenium-client.rubyforge.org/classes/Selenium/Client/Idiomatic.html">selenium-client.rubyforge.org/classes/Selenium/Client/Idiomatic.html</a>)
+</p>
+</li>
+<li>Leveraging latest innovations in <a
+href="../classes/Selenium.html">Selenium</a> Remote Control (screenshots,
+log captures, &#8230;)
+
+</li>
+<li>Robust Rake task to start/stop the <a
+href="../classes/Selenium.html">Selenium</a> Remote Control server. More
+details in the next section.
+
+</li>
+<li>State-of-the-art reporting for RSpec.
+
+</li>
+</ul>
+<p>
+Plain API
+</p>
+<h6>===</h6>
+<pre>
+ Selenium client is just a plain Ruby API, so you can use it wherever you can use Ruby.
+
+ To used the new API just require the client driver:
+
+    require &quot;rubygems&quot;
+    require &quot;selenium/client&quot;
+
+ For a fully backward compatible API you can start with:
+
+    require &quot;rubygems&quot;
+    gem &quot;selenium-client&quot;
+    require &quot;selenium&quot;
+
+ For instance
+ to write a little Ruby script using selenium-client you could write something like:
+
+    #!/usr/bin/env ruby
+    #
+    # Sample Ruby script using the Selenium client API
+    #
+    require &quot;rubygems&quot;
+    gem &quot;selenium-client&quot;, &quot;&gt;=1.2.9&quot;
+    require &quot;selenium/client&quot;
+
+    begin
+      @browser = Selenium::Client::Driver.new(&quot;localhost&quot;, 4444, &quot;*firefox&quot;, &quot;http://www.google.com&quot;, 10000);
+      @browser.start_new_browser_session
+        @browser.open &quot;/&quot;
+        @browser.type &quot;q&quot;, &quot;Selenium&quot;
+        @browser.click &quot;btnG&quot;, :wait_for =&gt; :page
+        puts @browser.text?(&quot;selenium.openqa.org&quot;)
+    ensure
+      @browser.close_current_browser_session
+    end
+</pre>
+<p>
+Writing Tests
+</p>
+<h6>=======</h6>
+<pre>
+ Most likely you will be writing functional and acceptance tests using selenium-client. If you are a
+ `Test::Unit` fan your tests will look like:
+
+    #!/usr/bin/env ruby
+    #
+    # Sample Test:Unit based test case using the selenium-client API
+    #
+    require &quot;test/unit&quot;
+    require &quot;rubygems&quot;
+    gem &quot;selenium-client&quot;, &quot;&gt;=1.2.9&quot;
+    require &quot;selenium/client&quot;
+
+    class ExampleTest &lt; Test::Unit::TestCase
+        attr_reader :browser
+
+      def setup
+        @browser = Selenium::Client::Driver.new &quot;localhost&quot;, 4444, &quot;*firefox&quot;, &quot;http://www.google.com&quot;, 10000
+        browser.start_new_browser_session
+      end
+
+      def teardown
+        browser.close_current_browser_session
+      end
+
+      def test_page_search
+                browser.open &quot;/&quot;
+                assert_equal &quot;Google&quot;, browser.title
+                browser.type &quot;q&quot;, &quot;Selenium&quot;
+                browser.click &quot;btnG&quot;, :wait_for =&gt; :page
+                assert_equal &quot;Selenium - Google Search&quot;, browser.title
+                assert_equal &quot;Selenium&quot;, browser.field(&quot;q&quot;)
+                assert browser.text?(&quot;selenium.openqa.org&quot;)
+                assert browser.element?(&quot;link=Cached&quot;)
+      end
+
+    end
+
+ If BDD is more your style, here is how you can achieve the same thing  using RSpec:
+
+    require 'rubygems'
+    gem &quot;rspec&quot;, &quot;=1.1.11&quot;
+    gem &quot;selenium-client&quot;, &quot;&gt;=1.2.9&quot;
+    require &quot;selenium/client&quot;
+    require &quot;selenium/rspec/spec_helper&quot;
+
+    describe &quot;Google Search&quot; do
+        attr_reader :selenium_driver
+        alias :page :selenium_driver
+
+     before(:all) do
+       @selenium_driver = Selenium::Client::Driver.new &quot;localhost&quot;, 4444, &quot;*firefox&quot;, &quot;http://www.google.com&quot;, 10000
+     end
+
+     before(:each) do
+       selenium_driver.start_new_browser_session
+     end
+
+     # The system capture need to happen BEFORE closing the Selenium session
+     append_after(:each) do
+       @selenium_driver.close_current_browser_session
+     end
+
+     it &quot;can find Selenium&quot; do
+       page.open &quot;/&quot;
+       page.title.should eql(&quot;Google&quot;)
+       page.type &quot;q&quot;, &quot;Selenium&quot;
+       page.click &quot;btnG&quot;, :wait_for =&gt; :page
+       page.value(&quot;q&quot;).should eql(&quot;Selenium&quot;)
+       page.text?(&quot;selenium.openqa.org&quot;).should be_true
+       page.title.should eql(&quot;Selenium - Google Search&quot;)
+     end
+
+    end
+</pre>
+<p>
+Start/Stop a <a href="../classes/Selenium.html">Selenium</a> Remote Control
+Server
+</p>
+<h6>=====================================</h6>
+<pre>
+  Selenium client comes with some convenient Rake tasks to start/stop a Remote Control server.
+  To leverage all selenium-client capabilities I recommend downloading a recent nightly build of
+  a standalone packaging of Selenium Remote Control (great for kick-ass Safari and Firefox 3 support anyway).
+  You will find the mightly build at [OpenQA.org](http://archiva.openqa.org/repository/snapshots/org/openqa/selenium/selenium-remote-control/1.0-SNAPSHOT/)
+
+ You typically &quot;freeze&quot; the Selenium Remote Control jar in your `vendor`
+ directory.
+
+    require 'selenium/rake/tasks'
+
+    Selenium::Rake::RemoteControlStartTask.new do |rc|
+      rc.port = 4444
+      rc.timeout_in_seconds = 3 * 60
+      rc.background = true
+      rc.wait_until_up_and_running = true
+      rc.jar_file = &quot;/path/to/where/selenium-rc-standalone-jar-is-installed&quot;
+      rc.additional_args &lt;&lt; &quot;-singleWindow&quot;
+    end
+
+    Selenium::Rake::RemoteControlStopTask.new do |rc|
+      rc.host = &quot;localhost&quot;
+      rc.port = 4444
+      rc.timeout_in_seconds = 3 * 60
+    end
+
+ Check out [RemoteControlStartTask](http://selenium-client.rubyforge.org/classes/Selenium/Rake/RemoteControlStartTask.html) and [RemoteControlStopTask](http://selenium-client.rubyforge.org/classes/Selenium/Rake/RemoteControlStopTask.html) for more
+</pre>
+<p>
+details.
+</p>
+<p>
+State-of-the-Art RSpec Reporting
+</p>
+<h6>==========================</h6>
+<pre>
+ Selenium Client comes with out-of-the-box RSpec reporting that include HTML snapshots, O.S. screenshots, in-browser page
+</pre>
+<p>
+screenshots (not limited to current viewport), and a capture of the latest
+remote controls for all failing tests. And all course all this works even
+if your infrastructure is distributed (In particular in makes wonders with
+[<a href="../classes/Selenium.html">Selenium</a> Grid](<a
+href="http://selenium-grid.openqa.org">selenium-grid.openqa.org</a>))
+</p>
+<pre>
+ Using selenium-client RSpec reporting is as simple as using `SeleniumTestReportFormatter` as one of you RSpec formatters. For instance:
+
+    require 'spec/rake/spectask'
+    desc 'Run acceptance tests for web application'
+    Spec::Rake::SpecTask.new(:'test:acceptance:web') do |t|
+     t.libs &lt;&lt; &quot;test&quot;
+     t.pattern = &quot;test/*_spec.rb&quot;
+     t.spec_opts &lt;&lt; '--color'
+     t.spec_opts &lt;&lt; &quot;--require 'rubygems,selenium/rspec/reporting/selenium_test_report_formatter'&quot;
+     t.spec_opts &lt;&lt; &quot;--format=Selenium::RSpec::SeleniumTestReportFormatter:./tmp/acceptance_tests_report.html&quot;
+     t.spec_opts &lt;&lt; &quot;--format=progress&quot;
+     t.verbose = true
+    end
+
+ You can then get cool reports like [this one](http://ph7spot.com/examples/selenium_rspec_report.html)
+</pre>
+<p>
+Contribute and Join the Fun!
+</p>
+<h6>======================</h6>
+<pre>
+  We welcome new features, add-ons, bug fixes, example, documentation, etc. Make the gem work the way you
+  envision!
+</pre>
+<ul>
+<li>I recommend cloning the selenium-client [reference repository](<a
+href="http://github.com/ph7/selenium-client/tree/master">github.com/ph7/selenium-client/tree/master</a>)
+I you are more of a SVN guy, the same code also lives at [OpenQA](<a
+href="http://svn.openqa.org/svn/selenium-rc/trunk/clients/ruby">svn.openqa.org/svn/selenium-rc/trunk/clients/ruby</a>)
+
+</li>
+<li>You can also check out the [RubyForge page](<a
+href="http://rubyforge.org/projects/selenium-client">rubyforge.org/projects/selenium-client</a>)
+and the [RDoc](<a
+href="http://selenium-client.rubyforge.org">selenium-client.rubyforge.org</a>)
+
+</li>
+<li>We also have a [continuous integration server](<a
+href="http://xserve.openqa.org:8080/view/Ruby%20Client">xserve.openqa.org:8080/view/Ruby%20Client</a>)
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>DefaultSelenium.ChooseOkOnNextConfirmation Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">An NDoc Documented Class Library</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">DefaultSelenium.ChooseOkOnNextConfirmation Method </h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Undo the effect of calling chooseCancelOnNextConfirmation. Note that Selenium's overridden window.confirm() function will normally automatically return true, as if the user had manually clicked OK, so you shouldn't need to use this command unless for some reason you need to change your mind prior to the next confirmation. After any confirmation, Selenium will resume using the default behavior for future confirmations, automatically returning true (OK) unless/until you explicitly call chooseCancelOnNextConfirmation for each confirmation. </p>
+      <p> Take note - every time a confirmation comes up, you must consume it with a corresponding getConfirmation, or else the next selenium operation will fail. </p>
+            <div class="syntax">public <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> ChooseOkOnNextConfirmation();</div><h4 class="dtH4">Implements</h4><p><a href="Selenium.ISelenium.ChooseOkOnNextConfirmation.html">ISelenium.ChooseOkOnNextConfirmation</a></p><h4 class="dtH4">See Also</h4><p><a href="Selenium.DefaultSelenium.html">DefaultSelenium Class</a> | <a href="Selenium.html">Selenium Namespace</a></p></div>
+  </body>
+</html>
