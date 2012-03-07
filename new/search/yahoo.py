@@ -1,16 +1,15 @@
-import urllib2
+import requests
 import urllib
-import BeautifulSoup
+import lxml.html
 
 YAHOO_BASE='http://search.yahoo.com/search?p='
 
 def search_for(s):
-    fd = urllib2.urlopen(YAHOO_BASE + urllib.quote(s))
-    response = fd.read()
-    soup = BeautifulSoup.BeautifulSoup(response)
-    first_url = soup(attrs={'class': 'url'})[0]
-    url_text = ''.join(first_url(text=True))
-    return url_text
+    page_text = requests.get(YAHOO_BASE + urllib.quote(s)).text
+    parsed = lxml.html.fromstring(page_text)
+    urls = parsed.cssselect('.url')
+    first_url = urls[0]
+    return first_url.text_content()
 
 if __name__ == '__main__':
     print search_for('asheesh')
