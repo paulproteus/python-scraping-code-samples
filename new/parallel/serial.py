@@ -55,5 +55,18 @@ def parallel_with_multiprocessing():
                               for url in LIST_OF_URLS]
     [i.get() for i in result]
 
+def parallel_via_requests_async():
+    def handle_one_response(r):
+        parsed = feedparser.parse(r.content)
+        if parsed.entries:
+            print 'Found entry:', parsed.entries[0]
+
+    import requests.async
+    list_of_async_requests = [
+        requests.async.get(url,
+                           hooks={'response': handle_one_response})
+        for url in LIST_OF_URLS]
+    requests.async.map(list_of_async_requests, size=5)
+
 if __name__ == '__main__':
-    parallel_with_twisted()
+    parallel_via_requests_async()
