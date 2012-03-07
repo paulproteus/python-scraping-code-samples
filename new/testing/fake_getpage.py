@@ -15,17 +15,24 @@ class FakeGetPage(object):
         return d
 fakeGetPageFn = FakeGetPage().getPage
 
+def record_found_eggplant():
+    pass
+
 def has_eggplant(s):
-    return 'eggplant' in s.lower()
+    if 'eggplant' in s.lower():
+        record_found_eggplant()
 
 def make_eggplant_checker():
     d = twisted.web.client.getPage('http://mehfilindian.com/LunchMenuTakeOut.htm')
     d.addBoth(has_eggplant)
 
-class CurryTestSlow(unittest.TestCase):
+class CurryTestTwist(unittest.TestCase):
+    @mock.patch('record_found_eggplant')
     @mock.patch('twisted.web.client.getPage', fakeGetPageFn)
-    def test(self):
-        pass
+    def test(self, mock_record_found_eggplant):
+        make_eggplant_checker()
+        self.assertTrue(mock_record_found_eggplant.called)
+
 
 if __name__ == '__main__':
     unittest.main()
