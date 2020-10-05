@@ -2,7 +2,7 @@ import urllib2
 import urllib
 import BeautifulSoup
 
-# The URL to this service
+# The URL to this service is given below 
 URL = 'http://www.cepstral.com/cgi-bin/demos/weather'
 
 
